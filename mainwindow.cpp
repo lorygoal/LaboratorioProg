@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->dateEdit->setDate(QDate::currentDate());
 }
 
 MainWindow::~MainWindow()
@@ -24,17 +25,14 @@ void MainWindow::on_pushButton_clicked()
        Day* d = new Day;
        d->show();
        this->calendario.insert(std::pair<QString, Day*>(title, d));
-       d->setWindowTitle("Le tue attività del "+ title);
+       d->setWindowTitle("Activities | "+ title);
        d->setDate(title); }
     else {
        it->second->show();
-       it->second->setWindowTitle("Le tue attività del "+ title);
+       it->second->setWindowTitle("Activities | "+ title);
        it->second->setDate(title);
     }
 
-    /*for (auto i : this->calendario) {
-        QLabel* l = new QLabel(i.first);
-        l->show(); }*/
 
 
 }

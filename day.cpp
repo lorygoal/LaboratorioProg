@@ -36,7 +36,6 @@ Day::Day(QWidget *parent) :
         QLabel* from = new QLabel("     From:");
         QTimeEdit* start = new QTimeEdit;
         QLabel* to = new QLabel("     To:");
-        //QPushButton* confirm = new QPushButton("Confirm");
 
         QTimeEdit* end = new QTimeEdit;
         widget->setMinimumHeight(50);
@@ -48,7 +47,7 @@ Day::Day(QWidget *parent) :
         widget->layout()->addWidget(start);
         widget->layout()->addWidget(to);
         widget->layout()->addWidget(end);
-        //widget->layout()->addWidget(confirm);
+
 
         QString activ = act->getActivity();
         line->setText(activ);
@@ -114,20 +113,7 @@ void Day::on_pushButton_clicked()
 
 
 
-    //Day::on_confirm_clicked(start->text(), line->text(), end->text(), this->date, confirm);
-
-
-
 }
-/*void Day::on_confirm_clicked(QString a, QString b, QString c, QString d, QPushButton* conf ) {
-    Event* e = new Event(a, b, c, d);
-    conf->hide();
-}*/
-void Day::action(QString a, QString b, QString c, QString d, QPushButton* conf) {
-    //QWidget* w = new QWidget;
-    // w->show;
-    //Event* e = new Event("a", "b", "c", "d");
-    //conf->hide();
-    }
+
 
 

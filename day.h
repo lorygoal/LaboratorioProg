@@ -21,7 +21,7 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void action(QString a, QString b, QString c, QString d, QPushButton* conf );
+
 
 
 private:
