@@ -2,8 +2,10 @@
 #define DAY_H
 
 #include <QDialog>
+#include <QList>
 #include "QString"
 #include "event.h"
+#include "giorno.h"
 
 namespace Ui {
 class Day;
@@ -18,6 +20,7 @@ public:
     ~Day();
 
     void setDate(QString dt);
+    void update();
 
 private slots:
     void on_pushButton_clicked();
@@ -27,7 +30,8 @@ private slots:
 private:
     Ui::Day *ui;
     QString date;
-    std::list<Event*> attività;
+    Giorno* g;
+    QList<QWidget*> widgets;
 };
 
 #endif // DAY_H

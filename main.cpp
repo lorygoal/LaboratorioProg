@@ -5,9 +5,11 @@
 #include "event.h"
 #include "mainwindow.h"
 #include "day.h"
+#include "tester.h"
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
     MainWindow* w = new MainWindow;
     w->setWindowTitle("Register");

@@ -11,8 +11,15 @@ public:
     Event(QString sh, QString act, QString eh, QString d ): start_hour(sh), activity(act), end_hour(eh), day(d) {}
     ~Event();
 
-    QString getActivity(){
+     QString getActivity() const{
         return this->activity;
+    }
+
+     QString getStartHour() const{
+        return this->start_hour;
+    }
+     QString getEnd_Hour() const{
+        return this->end_hour;
     }
 
 private:
