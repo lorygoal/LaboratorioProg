@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <map>
+#include "dayview.h"
 #include "day.h"
 
 namespace Ui {

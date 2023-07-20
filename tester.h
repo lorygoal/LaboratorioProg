@@ -3,7 +3,8 @@
 
 #include <QObject>
 #include <QTest>
-#include "giorno.h"
+#include "day.h"
+#include "dayview.h"
 #include "event.h"
 
 class Tester : public QObject

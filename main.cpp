@@ -4,7 +4,7 @@
 #include "event.cpp"
 #include "event.h"
 #include "mainwindow.h"
-#include "day.h"
+#include "dayview.h"
 #include "tester.h"
 
 int main(int argc, char *argv[])

@@ -8,24 +8,25 @@
 
 
 void Tester::insertTest(){
-    Giorno* g = new Giorno;
+    Day* g = new Day;
     Event* e = new Event("10", "palestra", "12", "13/08/2023");
     g->insert(e);
-    QCOMPARE(g->getEvents().size(), 1);
+    QCOMPARE(g->getActSize(), 1);
 }
 void Tester::researchTest(){
-    Giorno* g = new Giorno;
+    Day* g = new Day;
     Event* e = new Event("10", "palestra", "12", "13/08/2023");
     g->insert(e);
     QCOMPARE(g->search("palestra", "10", "12"), e);
+    QCOMPARE(g->search("palestra", "10", "14"), nullptr);
 
 }
 void Tester::removeTest(){
-    Giorno* g = new Giorno;
+    Day* g = new Day;
     Event* e = new Event("10", "palestra", "12", "13/08/2023");
     g->insert(e);
     g->remove("palestra", "10", "12");
-    QCOMPARE(g->getEvents().size(), 0);
+    QCOMPARE(g->getActSize(), 0);
 }
 
 //QTEST_MAIN(Tester)

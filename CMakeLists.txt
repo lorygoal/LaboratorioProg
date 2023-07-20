@@ -22,11 +22,11 @@ add_executable(LaboratorioProg
   mainwindow.cpp
   mainwindow.h
   mainwindow.ui
+  dayview.h
+  dayview.cpp
+  day.ui
   day.h
   day.cpp
-  day.ui
-  giorno.h
-  giorno.cpp
   tester.h
   tester.cpp
 )

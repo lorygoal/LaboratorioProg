@@ -1,37 +1,45 @@
 #ifndef DAY_H
 #define DAY_H
 
-#include <QDialog>
-#include <QList>
-#include "QString"
 #include "event.h"
-#include "giorno.h"
+#include "QString"
 
-namespace Ui {
+
 class Day;
-}
+#include "dayview.h"
 
-class Day : public QDialog
+class Day
 {
-    Q_OBJECT
-
 public:
-    explicit Day(QWidget *parent = nullptr);
-    ~Day();
+    Day();
+    std::list<Event*> getEvents() const{
+        return this->attività;
+    }
 
-    void setDate(QString dt);
-    void update();
+    void insert(Event* e) {
+        this->attività.push_back(e);
+    }
+    Event* search(QString act, QString start, QString end) const;
 
-private slots:
-    void on_pushButton_clicked();
+    std::list<Event*> search(QString act);
 
+
+    void remove(QString act, QString start, QString end);
+
+    int getActSize() {
+        return attività.size();
+    }
+
+    DayView* getDayView(){
+        return this->d;
+    }
+
+    void viewSetUp(QString s);
 
 
 private:
-    Ui::Day *ui;
-    QString date;
-    Giorno* g;
-    QList<QWidget*> widgets;
+    std::list<Event*> attività;
+    DayView* d;
 };
 
 #endif // DAY_H
