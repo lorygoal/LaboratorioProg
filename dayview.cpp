@@ -39,8 +39,7 @@ void DayView::setUp(QString s) {
     this->setDate(s);
 }
 
-void DayView::update(){
-    for (auto act : this->g->getEvents()) {
+void DayView::update(Event* act){
         QWidget* widget = new QWidget();
         this->widgets.append(widget);
         QLineEdit* line = new QLineEdit();
@@ -90,11 +89,11 @@ void DayView::update(){
             this->g->remove(line->text(), start->text(), end->text());
             qDeleteAll(widgets.begin(), widgets.end());
             widgets.clear();
-            update();
+            this->g->updateView();
           });
-        }
+ }
 
-}
+
 void DayView::on_pushButton_clicked()
 {   ui->pushButton->setEnabled(false);
     QWidget* widget = new QWidget();
@@ -143,7 +142,8 @@ void DayView::on_pushButton_clicked()
         line->setEnabled(false);
         qDeleteAll(widgets.begin(), widgets.end());
         widgets.clear();
-        update();
+        //update();
+        this->g->updateView();
 
 
 

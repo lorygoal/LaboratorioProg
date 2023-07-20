@@ -12,9 +12,9 @@ class Day
 {
 public:
     Day();
-    std::list<Event*> getEvents() const{
+    /*std::list<Event*> getEvents() const{
         return this->attività;
-    }
+    }*/
 
     void insert(Event* e) {
         this->attività.push_back(e);
@@ -30,11 +30,13 @@ public:
         return attività.size();
     }
 
-    DayView* getDayView(){
+   /* DayView* getDayView(){
         return this->d;
-    }
+    }  */
 
     void viewSetUp(QString s);
+
+    void updateView();
 
 
 private:

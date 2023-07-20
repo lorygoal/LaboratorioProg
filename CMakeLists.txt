@@ -24,7 +24,7 @@ add_executable(LaboratorioProg
   mainwindow.ui
   dayview.h
   dayview.cpp
-  day.ui
+  dayview.ui
   day.h
   day.cpp
   tester.h

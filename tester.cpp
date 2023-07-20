@@ -1,7 +1,3 @@
-/*#include <QObject>
-#include <QTest>
-#include "giorno.h"
-#include "event.h" */
 
 #include "tester.h"
 

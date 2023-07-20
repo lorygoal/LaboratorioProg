@@ -10,6 +10,12 @@ void Day::viewSetUp(QString s) {
     this->d->setUp(s);
 }
 
+void Day::updateView() {
+    for (auto act: this->attività) {
+        d->update(act);
+    }
+}
+
 Event* Day::search(QString act, QString start, QString end) const {
     for (auto it: this->attività) {
         if (it->getActivity() == act && it->getStartHour()==start && it->getEnd_Hour()== end)
@@ -33,5 +39,6 @@ void Day::remove(QString act, QString start, QString end) {
     if (e != nullptr){
         this->attività.remove(e);
     }
-
 }
+
+
