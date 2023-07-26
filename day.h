@@ -12,22 +12,30 @@ class Day
 {
 public:
     Day();
+    ~Day();
     /*std::list<Event*> getEvents() const{
         return this->attività;
     }*/
 
-    void insert(Event* e) {
+    /*void insert(Event* e) {
+        this->attività.push_back(e);
+    }*/
+
+    void insert(Event& e) {
         this->attività.push_back(e);
     }
-    Event* search(QString act, QString start, QString end) const;
+    std::_List_const_iterator<Event> search(QString act, QString start, QString end) const;
 
-    std::list<Event*> search(QString act);
+    std::list<Event> search(QString act);
 
 
     void remove(QString act, QString start, QString end);
 
     int getActSize() {
         return attività.size();
+    }
+    std::_List_const_iterator<Event> getListEnd() {
+        return this->attività.end();
     }
 
    /* DayView* getDayView(){
@@ -40,7 +48,8 @@ public:
 
 
 private:
-    std::list<Event*> attività;
+    //std::list<Event*> attività;
+    std::list<Event> attività;
     DayView* d;
 };
 

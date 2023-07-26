@@ -23,7 +23,7 @@ public:
 
     void setDate(QString dt);
     void setUp(QString s);
-    void update(Event* act);
+    void update(Event& act);
 
 private slots:
     void on_pushButton_clicked();

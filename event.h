@@ -9,7 +9,8 @@ class Event
 {
 public:
     Event(QString sh, QString act, QString eh, QString d ): start_hour(sh), activity(act), end_hour(eh), day(d) {}
-    ~Event();
+    ~Event() {
+        }
 
      QString getActivity() const{
         return this->activity;

@@ -39,7 +39,7 @@ void DayView::setUp(QString s) {
     this->setDate(s);
 }
 
-void DayView::update(Event* act){
+void DayView::update(Event& act){
         QWidget* widget = new QWidget();
         this->widgets.append(widget);
         QLineEdit* line = new QLineEdit();
@@ -76,13 +76,17 @@ void DayView::update(Event* act){
         widget->layout()->addWidget(remove);
 
 
-        QString activ = act->getActivity();
+        //QString activ = act->getActivity();
+        QString activ = act.getActivity();
+
         line->setText(activ);
 
-        QString sh = act->getStartHour();
+        //QString sh = act->getStartHour();
+        QString sh = act.getStartHour();
         start->setText(sh);
 
-        QString eh = act->getEnd_Hour();
+        //QString eh = act->getEnd_Hour();
+        QString eh = act.getEnd_Hour();
         end->setText(eh);
 
         connect(remove, &QPushButton::clicked, this, [widget, line, this, start, end](){
@@ -134,9 +138,13 @@ void DayView::on_pushButton_clicked()
     connect(confirm, &QPushButton::clicked, this, [start, line, end, this, confirm, widget, remove](){
         ui->pushButton->setEnabled(true);
 
-        Event* e = new Event(start->text(), line->text(), end->text(), this->date);
+        //Event* e = new Event(start->text(), line->text(), end->text(), this->date);
+        //this->g->insert(e);
 
+        Event g(start->text(), line->text(), end->text(), this->date);
+        Event& e = g;
         this->g->insert(e);
+
         confirm->hide();
         remove->show();
         line->setEnabled(false);

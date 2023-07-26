@@ -23,6 +23,8 @@ void MainWindow::on_pushButton_clicked()
     auto it = this->calendario.find(title);
     if (it == this->calendario.end() ) {
        Day* g = new Day;
+       /*Day g;
+       Day& d = g;*/
        this->calendario.insert(std::pair<QString, Day*>(title, g));
        g->viewSetUp(title);
 }
