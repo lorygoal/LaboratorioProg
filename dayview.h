@@ -7,7 +7,7 @@
 
 
 namespace Ui {
-class DayView;
+class Day;
 }
 
 class DayView;
@@ -32,7 +32,7 @@ private slots:
 
 
 private:
-    Ui::DayView *ui;
+    Ui::Day *ui;
     QString date;
     Day* g;
     QList<QWidget*> widgets;

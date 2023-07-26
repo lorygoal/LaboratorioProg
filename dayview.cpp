@@ -15,7 +15,7 @@
 
 DayView::DayView(Day* g, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DayView),
+    ui(new Ui::Day),
     g(g)
 
 {
