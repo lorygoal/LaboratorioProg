@@ -17,7 +17,7 @@ void Tester::researchTest(){
     g.insert(e);
     QCOMPARE(g.search("palestra", "10", "12")->getActivity(), "palestra");
     QCOMPARE(g.search("palestra", "10", "12")->getStartHour(), "10");
-    QCOMPARE(g.search("palestra", "10", "12")->getEnd_Hour(), "12 ");
+    QCOMPARE(g.search("palestra", "10", "12")->getEnd_Hour(), "12");
     QCOMPARE(g.search("palestra", "10", "14"), g.getListEnd());
 
 }
